@@ -15,7 +15,7 @@ public class MovieIntegration {
     public Mono<MovieIntegrationModel> fetchMovie(String id) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .path("/{id}".concat(id))
+                        .path(id)
                         .build())
                 .retrieve()
                 .bodyToMono(MovieIntegrationModel.class);
