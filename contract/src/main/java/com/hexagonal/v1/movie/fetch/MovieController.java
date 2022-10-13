@@ -14,9 +14,9 @@ public class MovieController {
 
     private MovieApiPort movieApiPort;
 
-    @GetMapping("/{id}")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Mono<MovieResponseModel> fetchOneMovie(@PathVariable("id") String id) {
-        return movieApiPort.fetchMovie(id);
+    public Mono<MovieResponseModel> fetchOneMovie(@RequestParam String title) {
+        return movieApiPort.fetchMovie(title);
     }
 }

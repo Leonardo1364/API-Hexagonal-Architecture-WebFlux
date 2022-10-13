@@ -8,8 +8,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -17,30 +15,14 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieIntegrationModel {
+    @JsonProperty("Title")
     private String title;
+    @JsonProperty("Year")
     private String year;
-    private String rated;
-    private String released;
-    private String runtime;
+    @JsonProperty("Genre")
     private String genre;
-    private String director;
-    private String writer;
-    private String actors;
+    @JsonProperty("Plot")
     private String plot;
-    private String language;
-    private String country;
-    private String awards;
-    private String poster;
-    private List<RatingIntegrationModel> ratings;
-    @JsonProperty("metascore")
-    private String metaScore;
-    private String imdbRating;
-    private String imdbVotes;
-    private String imdbID;
+    @JsonProperty("Type")
     private String type;
-    private String dvd;
-    private String boxOffice;
-    private String production;
-    private String website;
-    private String response;
 }

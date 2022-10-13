@@ -14,7 +14,7 @@ public class MovieService implements MovieApiPort {
     private MovieSpiPort movieSpiPort;
 
     @Override
-    public Mono<MovieResponseModel> fetchMovie(String id) {
-        return movieSpiPort.findMovie(id);
+    public Mono<MovieResponseModel> fetchMovie(String title) {
+        return movieSpiPort.findMovie(title);
     }
 }

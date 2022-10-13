@@ -26,6 +26,7 @@ ext {
 
 dependencies {
 	implementation project(":contract")
+	implementation project(":infrastructure")
 }
 
 allprojects {

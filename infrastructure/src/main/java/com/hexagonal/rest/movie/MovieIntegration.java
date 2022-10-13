@@ -12,10 +12,11 @@ public class MovieIntegration {
 
     private final WebClient webClient;
 
-    public Mono<MovieIntegrationModel> fetchMovie(String id) {
+    public Mono<MovieIntegrationModel> fetchMovie(String title) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .path(id)
+                        .path("/om")
+                        .queryParam("t", title)
                         .build())
                 .retrieve()
                 .bodyToMono(MovieIntegrationModel.class);
